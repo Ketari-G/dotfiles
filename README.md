@@ -21,6 +21,7 @@ symlink.sh creates backups to your existing config files (assuming same name), t
 once installed, all modifications to .config/ files and the likes should be done in the git repo folder (~/.dotfiles/) instead of in the actual $HOME/ directories
 
 Optional:
+
 5. If using vesktop, go into settings -> vencord settings -> themes and turn on "Ketari's Simple Theme"
 6. In steam with millenium, go into steam -> millenium -> themes and enable "Simple Colors". *note: steam color changes require a steam restart*
 
