@@ -1,0 +1,23 @@
+:root {{
+
+	/* @name Library top color */
+	--libtop: {color2};
+	/* @name Library bottom color */
+	--libbot: {background};
+
+	/* @name What's new top color */
+	--libnewtop: {color4};
+	/* @name What's new bottom color */
+	--libnewbot: {background};
+
+	/* @name Library shelf top color */
+	--libshelftop: {background};
+	/* @name Library shelf bottom color */
+	--libshelfbot: {background};
+
+	/* @name Top bar color */
+	--topbar: {color1};
+
+	/* @name Bottom bar color */
+	--botbar: {color1};
+}}

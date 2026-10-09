@@ -1,0 +1,160 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 25, // Waybar height (to be removed for auto height)
+    "width": 1920, // Waybar width
+    "spacing": 4, // Gaps between modules
+    "fixed_center": true,
+    "reload_style_on_change": true, // most likely needed for css reloads for color customization
+
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "tray",
+        "custom/media"
+    ],
+    "modules-center": [
+        
+    ],
+    "modules-right": [
+        "group/systemstats",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "custom/power"
+    ],
+    "group/systemstats": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 50
+        },
+        "modules": [
+            "temperature",
+            "cpu",
+            "custom/gpu",
+            "memory",
+            "power-profiles-daemon"
+        ]
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "warp-on-scroll": false,
+        "format": "{id}"
+    },
+
+    "tray": {
+        //"icon-size": 15,
+        //"show-passive-items": true,
+        "spacing": 10,
+        "reverse-direction": true,
+        "orders": {
+            "nm-applet": 3,
+            "vesktop_status_icon_1": 2,
+            "steam": 1
+        }
+        // orders legit does nothing, its bugged af
+    },
+    "clock": {
+        "interval": 60,
+        "timezone": "EET",
+        "tooltip-format": "<big>{:%d / %m / %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "iso8601": true,
+            "mode": "month",
+            "first-day-of-week": 1,
+            "on-scroll": 1,
+            "format": {
+                "today": "<b><u>{}</u></b>"
+            }
+        },
+        "actions": {
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "custom/gpu": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "{}% ",
+        "return-type": "",
+        "interval": 10,
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% ",
+        "tooltip": false
+    },
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "tooltip":false
+    },
+    "backlight": { // might add / use at some point
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true,
+        "tooltip-format": "{power}W\n{timeTo}"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Current: {profile}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "{volume}% ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pkill wiremix; runquit kitty -e wiremix -p off"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
+    "custom/power": {
+        "format" : "⏻",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "/home/ketari/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "systemctl poweroff",
+			"reboot": "systemctl reboot"
+		}
+    }
+}

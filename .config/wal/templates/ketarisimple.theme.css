@@ -1,0 +1,49 @@
+/**
+ * @name Ketari's Simple Theme
+ * @author Ketari
+ * @description Extremely small theme made for pywal integration (made for vesktop)
+ * @version 0.0.1
+ */
+
+/* variable setting */
+:root {{
+  --background: {background};
+  --foreground: {foreground};
+
+  --color0: {color0};
+  --color1: {color1};
+  --color2: {color2};
+  --color3: {color3};
+  --color4: {color4};
+  --color5: {color5};
+  --color6: {color6};
+  --color7: {color7};
+  --color8: {color8};
+  --color9: {color9};
+  --color10: {color10};
+  --color11: {color11};
+  --color12: {color12};
+  --color13: {color13};
+  --color14: {color14};
+  --color15: {color15};
+}}
+
+/* color customization */
+:root {
+  --background-base-lowest: var(--color2); /* some buttons in friends tab? */
+  --background-base-lower: var(--background); /* main right side backgroud color */
+  --background-base-low: var(--color1); /* active now color tab */
+  --background-gradient-high: var(--background); /* main friend/channel bar left */
+  --background-gradient-lower: var(--color1); /* main top header bar color */
+  --chat-background-default: var(--color2); /* chat background color */
+  --text-default: var(--foreground); /* color of the text you type in the textbox */
+  --channel-text-area-placeholder: var(--color15); /* color of "message user" text */
+/*  --interactive-text-default: var(--color4); */ /* Icons */
+
+
+  /* scrollbar stuff */
+  --scrollbar-thin-thumb: var(--color2);
+  --scrollbar-auto-thumb: var(--color2);
+  --scrollbar-auto-track: rgba(255, 255, 255, 0.06);
+  --scrollbar-thin-track: rgba(255, 255, 255, 0.06);
+}

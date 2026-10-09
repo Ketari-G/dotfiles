@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pkill $1
+runquit $1 $2 $3 $4

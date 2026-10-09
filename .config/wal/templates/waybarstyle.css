@@ -1,0 +1,131 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#workspaces button {{
+    padding: 0 1px;
+    padding-top: 2px;
+    background-color: {color1};
+    color: #ffffff;
+    border-radius: 0;
+    border: 1.5px solid #FFFFFF;
+}}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+#workspaces button.focused, #workspaces button.active {{
+    background-color: {color3};
+}}
+
+#workspaces button.urgent {
+    background-color: #000000;
+}
+
+tooltip {{
+    background: alpha({color1}, 0.5);
+    border-radius: 10px 10px 10px 10px;
+    border: 1.5px solid {color14};
+}}
+
+#clock,
+#cpu,
+#battery,
+#custom-gpu,
+#memory,
+#temperature,
+#backlight,
+#pulseaudio,
+#custom-media,
+#tray,
+#power-profiles-daemon,
+#custom-power {{
+    padding: 0 8px;
+    color: #FFFFFF;
+    background-color: {color1};
+    border: 1.5px solid #FFFFFF;
+    border-radius: 20px;
+    margin: 0px;
+    padding-top: 2px;
+    margin-top: 1px;
+}}
+
+#cpu {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left: 3px;
+}
+
+#custom-gpu {
+    border-radius: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#memory {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-right: 3px;
+}
+
+#power-profiles-daemon {
+    padding-right: 14px;
+    padding-top: 0px;
+}
+
+#power-profiles-daemon.performance {
+    padding-right: 10px;
+    padding-top: 0px;
+}
+
+#battery {
+    padding-right: 10px;
+}
+
+#custom-power {
+    padding: 0 8px;
+    margin-right: 2px;
+    padding-top: 4px;
+}
+
+#tray {
+    padding-top: 2px;
+}
+
+#custom-media {
+    padding-top: 4px;
+}
+
+#clock {
+    padding-top: 4px;
+}
+
+#battery.critical {
+    background-color: #f53c3c;
+}
+
+#custom-media {
+    min-width: 100px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#language {
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}

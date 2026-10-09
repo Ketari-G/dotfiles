@@ -1,0 +1,18 @@
+speed: 2.0                    # pan speed multiplier
+invert:
+  enabled: true               # true = grab canvas (intuitive), false = follow cursor
+edge_scroll:
+  enabled: false               # auto-pan when dragging window past screen edge
+  ramp_distance: 50            # px of overflow to reach full speed
+  speed: 20.0                  # max px/frame at full overflow (~1200 px/s at 60fps)
+  grab_dead_zone: 5            # px of real movement before camera engages
+  # max_speed: 30             # optional: cap per-frame edge-scroll delta (pixels)
+navigation:
+  cooldown: 0.05               # seconds between nav commands
+  protected_apps:             # these windows are skipped during navigation
+    - chromium
+    - firefox
+canvas:
+  preserve_geometry: true     # remember floating window positions/sizes on OFF,
+                               # restore them on the next ON; tiled placement itself
+                               # is always layout-owned
